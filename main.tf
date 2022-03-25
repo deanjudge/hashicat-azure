@@ -111,9 +111,7 @@ resource "azurerm_virtual_machine" "catapp" {
 
   network_interface_ids         = [azurerm_network_interface.catapp-nic.id]
   delete_os_disk_on_termination = "true"
-  tags = {
-    Department          =  "devops"
-  }
+ 
   storage_image_reference {
     publisher = var.image_publisher
     offer     = var.image_offer
@@ -138,7 +136,7 @@ resource "azurerm_virtual_machine" "catapp" {
     disable_password_authentication = false
   }
 
-  tags = {}
+  tags = {Department          =  "devops"}
 
   # Added to allow destroy to work correctly.
   depends_on = [azurerm_network_interface_security_group_association.catapp-nic-sg-ass]
