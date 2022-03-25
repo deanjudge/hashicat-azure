@@ -1,4 +1,4 @@
-resource "azurerm_resource_group" "Gaurav" {
+resource "azurerm_resource_group" "gaurav" {
   name     = "my-resources"
   location = "West Europe"
 }
